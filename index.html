@@ -1,0 +1,92 @@
+<!--
+Daniel DiTommaso
+daniel_ditommaso@student.uml.edu
+91.61 GUI Programming I
+CS Senior Undergraduate
+Created: 12/19/2017
+This page is for the Final.
+ -->
+<!doctype html>
+<html>
+  <head>
+    <title>Upload Images</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.2.1/cropper.css">
+    <link rel="stylesheet" type="text/css" href="project.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+    <div ng-app="uploadPage" ng-controller="uploadController as vm">
+      <div>
+	<input id="uploadInput" type="file" file-model="myFile" multiple  accept=".jpg"/>
+	<button ng-click="vm.uploadFile()">Upload!</button>
+      </div>
+      <div> Click a thumbnail to edit!</div>
+      <div class="scrollmenu">
+	<div ng-repeat="file in vm.files">
+	  <img ng-src="{{ file }}" height="150px" ng-click="vm.addToPortfolio($event)"></img>
+	</div>
+      </div>
+
+
+      <canvas ng-show="this.ifCanvas" id="canvas">
+	Your browser does not support canvas.
+      </canvas>
+      
+      <div id="results">
+	<button ng-click="vm.rotate()">Rotate Image</button>
+      </br>
+      <label>
+	Scale X(Between 0 and 1): <input min="0" max="1" type="number" ng-model="vm.scaleX"></input>
+      </label>
+      </br>
+      <label>
+	Scale Y(Between 0 and 1): <input min="0" max="1" type="number" ng-model="vm.scaleY"></input>
+      </label>
+      </br>
+      <button ng-click="vm.scale()"> Scale Image</button>
+      <button ng-click="vm.results()">Add to portfolio!</button>
+      </br>
+      <div class="portfolio">
+	Portfolio:
+
+
+	<div class="w3-container">
+	  <button ng-show="vm.portfolio.length > 0" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">View Slideshow!</button>
+
+	  <div id="id01" class="w3-modal">
+	    <div class="w3-modal-content">
+	      <div class="w3-container">
+		<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+
+		<div class="w3-content w3-display-container">
+		  <img ng-repeat="file in vm.portfolio"class="mySlides" ng-src="{{ file }}"/>
+		  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+		  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+		</div>
+
+
+
+
+	
+      </div>
+    </div>
+  </div>
+</div>		      
+	<div ng-repeat="file in vm.portfolio">
+	  <div class="wrapper">
+	    <p class="desc"> Delete?</p>
+	    <img ng-click="vm.deleteFromPortfolio($event)" ng-src="{{ file }}"></img>
+	  </div>
+	</div>
+      </div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.2.1/cropper.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="javascript.js"></script>
+    <script type="text/javascript" src="modal.js"></script>
+  </body>
+</html>

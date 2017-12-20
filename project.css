@@ -1,0 +1,51 @@
+
+#canvas {
+  height: 600px;
+  width: 600px;
+  background-color: #ffffff;
+  cursor: default;
+  border: 1px solid black;
+}
+div.scrollmenu {
+    height: 200px;
+    background-color: #333;
+    overflow-x: scroll;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+div.scrollmenu div img {
+    display: inline-block;
+    float: left;
+    color: white;
+}
+
+canvas {
+    max-width=100%; 
+    max-height=40%;
+}
+
+div.scrollmenu div img:hover {
+    background-color: #777;
+}
+
+.mySlides {
+    max-width: 100%;
+    max-height: 100%;
+}
+.desc {
+  position: relative;
+  color: #DC143C;
+  visibility: hidden;
+  opacity: 0;
+  font-size: large;
+  transition: opacity .2s, visibility .2s;
+}
+
+.wrapper img {
+        margin: 0 auto;
+}
+.wrapper:hover .desc {
+  visibility: visible;
+  opacity: 1;
+}
