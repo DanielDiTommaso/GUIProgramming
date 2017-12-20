@@ -1,10 +1,10 @@
 
 #canvas {
-  height: 600px;
-  width: 600px;
-  background-color: #ffffff;
-  cursor: default;
-  border: 1px solid black;
+    height: 600px;
+    width: 600px;
+    background-color: #ffffff;
+    cursor: default;
+    border: 1px solid black;
 }
 div.scrollmenu {
     height: 200px;
@@ -34,18 +34,18 @@ div.scrollmenu div img:hover {
     max-height: 100%;
 }
 .desc {
-  position: relative;
-  color: #DC143C;
-  visibility: hidden;
-  opacity: 0;
-  font-size: large;
-  transition: opacity .2s, visibility .2s;
+    position: relative;
+    color: #DC143C;
+    visibility: hidden;
+    opacity: 0;
+    font-size: large;
+    transition: opacity .2s, visibility .2s;
 }
 
 .wrapper img {
-        margin: 0 auto;
+    margin: 0 auto;
 }
 .wrapper:hover .desc {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
